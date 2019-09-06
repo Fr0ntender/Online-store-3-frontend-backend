@@ -1,0 +1,2 @@
+import ChangeProductContainer from './ChangeProductContainer'
+export default ChangeProductContainer

@@ -1,0 +1,18 @@
+{
+    "num": "",
+    "isbn": "",
+    "name": "",
+    "vote": "",
+    "year": "",
+    "price": "",
+    "rating": "",
+    "lastName": "",
+    "firstName": "",
+    "imgName": "",
+    "imgUrl": "",
+    "isbnValid": true,
+    "yearValid": true,
+    "nameRequired": true,
+    "lastRequired": true,
+    "firstRequired": true
+}

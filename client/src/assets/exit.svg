@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25.728" height="25.5" viewBox="0 0 25.728 25.5">
+  <g id="exit" transform="translate(7.598 -1.25)">
+    <path id="login-fig-1" d="M29,6.034V2a.975.975,0,0,0-.947-1H11.947A.975.975,0,0,0,11,2V24a.975.975,0,0,0,.947,1H28.053A.975.975,0,0,0,29,24V20.006" transform="translate(-17.848 1)" fill="none" stroke="#000" stroke-miterlimit="10" stroke-width="1.5"/>
+    <path id="login-fig-2" d="M12.864,14.11,19,19.555,12.863,25M1,19.555H18.7" transform="translate(-2 -5.61)" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5"/>
+  </g>
+</svg>

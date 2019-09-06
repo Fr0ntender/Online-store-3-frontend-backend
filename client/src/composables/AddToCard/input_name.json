@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Код товара",
+        "label": "num"
+    }, {
+        "name": "Цена товара",
+        "label": "price"
+    }, {
+        "name": "Наименование товара",
+        "label": "name"
+    }, {
+        "name": "Кол-во отзывов",
+        "label": "vote"
+    }, {
+        "name": "Рейтинг",
+        "label": "rating"
+    }, {
+        "name": "Имя Автора",
+        "label": "firstName"
+    }, {
+        "name": "Фамилия Автора",
+        "label": "lastName"
+    }, {
+        "name": "Год публикации",
+        "label": "year"
+    }, {
+        "name": "ISBN",
+        "label": "isbn"
+    }
+]

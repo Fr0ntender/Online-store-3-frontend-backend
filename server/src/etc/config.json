@@ -1,0 +1,10 @@
+{
+    "devHost": "localhost",
+    "devUrl": "http://localhost",
+    "devPort": 4000,
+    "db":{
+        "name": "OnlineStore2",
+        "host": "localhost",
+        "port": 27017
+    }
+}

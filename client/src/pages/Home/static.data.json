@@ -1,0 +1,32 @@
+[
+    {
+        "cardUrl": "./assets/1021969597.jpg",
+        "cardPrice": "700",
+        "cardName": "Красная таблетка",
+        "cardVote": "10",
+        "cardStars": "4.8",
+        "cardAutor": "Андрей Курпатов",
+        "cardIsbn": "798-5-906940-62-9"
+    }, {
+        "cardUrl": "./assets/1032543188.jpg",
+        "cardPrice": "500",
+        "cardName": "Пожиратели времени. Как избавить от лишней",
+        "cardVote": "11",
+        "cardStars": "4",
+        "cardAutor": "Фридман Александр"
+    }, {
+        "cardUrl": "./assets/1014877309.jpg",
+        "cardPrice": "642",
+        "cardName": "Простой Python. Современный стиль программирования",
+        "cardVote": "3",
+        "cardStars": "3",
+        "cardAutor": "Билл Любанович"
+    }, {
+        "cardUrl": "./assets/1019869028.jpg",
+        "cardPrice": "864",
+        "cardName": "Изучаем программирование на Python",
+        "cardVote": "50",
+        "cardStars": "4.6",
+        "cardAutor": "Пол Бэрри"
+    }
+]
