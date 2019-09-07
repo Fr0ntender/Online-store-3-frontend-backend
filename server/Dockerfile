@@ -1,7 +1,7 @@
 FROM frostox/custom-node:12.9.0
 
 RUN cd home/ \
-    && git clone https://github.com/Frost0x/Online-Store_Phase3.git online-store\
+    && git clone https://github.com/Frost0x/Online-Store_Phase3.git online-store \
     && cd online-store \
     && rm -rf client \
     && cd server \
@@ -12,4 +12,4 @@ WORKDIR /home/online-store
 
 EXPOSE 4000
 
-CMD ["nodemon", "src/index.js"]
+CMD ["yarn", "start"]
