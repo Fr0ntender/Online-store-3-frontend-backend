@@ -57,7 +57,7 @@ const Home = ({
                         </aside> */}
                     </Col>
                     <Col set="10">
-                        <HeaderH1 mt="0" mb="20">Книги</HeaderH1>
+                        <HeaderH1 mt="0" mb="20">Товары</HeaderH1>
                         <CardRow>
                             {products.map(v =>
                                 <CardWrap key={v4()}>
@@ -69,8 +69,8 @@ const Home = ({
                                         price={v.price}
                                         rating={v.rating}
                                         imgUrl={v.imgUrl}
-                                        fastName={v.fastName}
-                                        lirstName={v.lirstName}
+                                        firstName={v.firstName}
+                                        lastName={v.lastName}
                                     />
                                 </CardWrap>
                             )}

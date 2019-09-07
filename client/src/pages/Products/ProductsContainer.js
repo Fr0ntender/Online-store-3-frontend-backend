@@ -27,48 +27,52 @@ const props = ({
     logout: () => {
         logout()
     },
-    searchActive: name => {
-        let sortName = ''
-        let nameToggl = ''
-        let stateName = ''
+    searchActive: (sortName, data) => {
+        let name = '',
+            sortedName = '',
+            nameToggl = '',
+            state = ''
         const { location } = history
 
-        if (name === 'Name') {
+        if (sortName === 'Name') {
             if (location.search && location.state) {
-                sortName = location.search.replace('?sortName=', '')
-                nameToggl = sortName === 'ascending' ? 'descending' : 'ascending'
-                stateName = sortName === 'ascending' ? false : true
+                sortedName = location.search.replace('?sortName=', '')
+                nameToggl = sortedName === 'ascending' ? 'descending' : 'ascending'
+                state = sortedName === 'ascending' ? false : true
             } else if (location.search) {
-                sortName = location.search.replace('?sortName=', '')
-                nameToggl = sortName === 'ascending' ? 'ascending' : 'descending'
-                stateName = nameToggl === 'ascending' ? true : false
+                sortedName = location.search.replace('?sortName=', '')
+                nameToggl = sortedName === 'ascending' ? 'ascending' : 'descending'
+                state = nameToggl === 'ascending' ? true : false
             } else {
                 nameToggl = 'ascending'
-                stateName = true
+                state = true
             }
         } else {
             if (location.search && location.state) {
-                sortName = location.search.replace('?sortYear=', '')
-                nameToggl = sortName === 'ascending' ? 'descending' : 'ascending'
-                stateName = sortName === 'ascending' ? false : true
+                sortedName = location.search.replace('?sortYear=', '')
+                nameToggl = sortedName === 'ascending' ? 'descending' : 'ascending'
+                state = sortedName === 'ascending' ? false : true
             } else if (location.search) {
-                sortName = location.search.replace('?sortYear=', '')
-                nameToggl = sortName === 'ascending' ? 'ascending' : 'descending'
-                stateName = nameToggl === 'ascending' ? true : false
+                sortedName = location.search.replace('?sortYear=', '')
+                nameToggl = sortedName === 'ascending' ? 'ascending' : 'descending'
+                state = nameToggl === 'ascending' ? true : false
             } else {
                 nameToggl = 'ascending'
-                stateName = true
+                state = true
             }
         }
         history.push({
             pathname: '/admin/products/',
-            search: `?sort${name}=${nameToggl}`,
-            type: name,
+            search: `?sort${sortName}=${nameToggl}`,
+            type: sortName,
             state: {
-                sort: stateName
+                sort: state
             }
         })
-        console.log(stateName, name)
+        data.fetchMore({
+            variables: { name, sortName, state },
+            updateQuery: (previousResult, { fetchMoreResult }) => fetchMoreResult
+        })
     }
 })
 
@@ -76,17 +80,17 @@ const delProduct = graphql(delProductMutation, {
     props: ({ mutate }) => ({
         delProduct: id => mutate({
             variables: { id },
-            refetchQueries: [{ 
+            refetchQueries: [{
                 query: productsQuery,
-                variables: { name: '' }
+                variables: { name: '', sortName: '', state: false }
             }],
         })
     })
 })
 
-const getProduct = graphql(productsQuery, {
-    options: ({ name = '' }) => ({
-        variables: { name }
+const getProducts = graphql(productsQuery, {
+    options: ({ name = '', sortName = '', state = false }) => ({
+        variables: { name, sortName, state },
     })
 })
 
@@ -97,19 +101,20 @@ export default compose(
     ),
     withProps(props),
     withRouter,
+    delProduct,
+    getProducts,
     lifecycle({
         UNSAFE_componentWillMount() {
             const { location } = this.props.history
-            if (location.search) {
+            const { data } = this.props
+            if (data && location.search) {
                 const sortName = location.search.replace('?sort', '').replace('=descending', '').replace('=ascending', '')
                 if (sortName === 'Name') {
-                    this.props.searchActive('Name')
+                    this.props.searchActive('Name', data)
                 } else {
-                    this.props.searchActive('Year')
+                    this.props.searchActive('Year', data)
                 }
             }
         }
-    }),
-    delProduct,
-    getProduct,
+    })
 )(Products)

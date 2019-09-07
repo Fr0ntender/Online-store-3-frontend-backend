@@ -27,14 +27,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // RESTful api handlers
-app.post('/api/product/sort', (req, res) => {
-    db.sortProduct(req.body.state, req.body.name)
-        .then(data => res.send(data))
-        .catch(err => res.send(`Error ${err}`))
-})
-
-app.delete('/api/product/:id', (req, res) => {
-    db.deleteProduct(req.params.id).then(data => res.send(data))
+app.get('/', (req, res) => {
+    res.send(200)
 })
 
 app.listen(devPort, function () {

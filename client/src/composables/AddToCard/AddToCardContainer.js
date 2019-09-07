@@ -14,7 +14,7 @@ const addProduct = graphql(addProductMutation, {
             variables: product,
             refetchQueries: [{ 
                 query: productsQuery,
-                variables: { name: '' }
+                variables: { name: '', sortName: '', state: false }
             }],
         }),
     }),
@@ -26,15 +26,15 @@ const upProduct = graphql(upProductMutation, {
             variables: product,
             refetchQueries: [{ 
                 query: productsQuery,
-                variables: { name: '' }
+                variables: { name: '', sortName: '', state: false  }
             }],
         }),
     }),
 })
 
 const getProducts = graphql(productsQuery, {
-    options: ({ name = '' }) => ({
-        variables: { name }
+    options: ({ name = '', sortName = '', state = false }) => ({
+        variables: { name, sortName, state }
     })
 })
 

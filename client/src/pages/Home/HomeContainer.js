@@ -33,8 +33,8 @@ export const props = ({
 })
 
 const searchProduct = graphql(productsQuery, {
-    options: ({ name = '' }) => ({
-        variables: { name }
+    options: ({ name = '', sortName = '', state = false }) => ({
+        variables: { name, sortName, state }
     })
 })
 

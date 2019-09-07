@@ -36,7 +36,7 @@ const ProductTable = ({
                                 <Desc2 mt="0" mb="0">Код товара</Desc2>
                             </Content>
                         </Th>
-                        <Th set="2.65" active onClick={() => searchActive('Name')}>
+                        <Th set="2.65" active onClick={() => searchActive('Name', data)}>
                             <Content>
                                 <Desc2 mt="0" mb="0">Наименование</Desc2>
                                 <ImgArrow src={Arrow} rotates={sortState} name="Name" />
@@ -47,7 +47,7 @@ const ProductTable = ({
                                 <Desc2 mt="0" mb="0">Цена</Desc2>
                             </Content>
                         </Th>
-                        <Th set="0.4" active onClick={() => searchActive('Year')}>
+                        <Th set="0.4" active onClick={() => searchActive('Year', data)}>
                             <Content>
                                 <Desc2 mt="0" mb="0">Год</Desc2>
                                 <ImgArrow src={Arrow} rotates={sortState}

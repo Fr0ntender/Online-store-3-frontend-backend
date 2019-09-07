@@ -4,6 +4,7 @@ const Product = require('../models/Product')
 const {
     GraphQLObjectType,
     GraphQLNonNull,
+    GraphQLBoolean,
     GraphQLString,
     GraphQLSchema,
     GraphQLList,
@@ -159,9 +160,29 @@ const Query = new GraphQLObjectType({
         },
         products: {
             type: new GraphQLList(ProductType),
-            args: { name: { type: GraphQLString } },
-            resolve(parent, {name}) {
-                return Product.find({ name: { $regex: name, $options: "i" }})
+            args: { 
+                name: { type: GraphQLString },
+                sortName: { type: GraphQLString },
+                state: { type: GraphQLBoolean }
+            },
+            resolve(parent, { name, sortName, state }) {
+                if(name !== '') {
+                    return Product.find({ name: { $regex: name, $options: "i" }})
+                } else if (sortName === 'Name') {
+                    if (!state) {
+                        return Product.find().sort({ name: 1 })
+                    } else {
+                        return Product.find().sort({ name: -1 })
+                    }
+                } else if (sortName === 'Year') {
+                    if (!state) {
+                        return Product.find().sort({ year: 1 })
+                    } else {
+                        return Product.find().sort({ year: -1 })
+                    }
+                } else {
+                    return Product.find()
+                }
             }
         }
     }
