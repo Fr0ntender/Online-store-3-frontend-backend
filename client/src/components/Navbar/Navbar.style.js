@@ -39,35 +39,48 @@ export const Icons = styled.div`
     padding: 3px 10px;
     cursor: pointer;
     
-    ${props => props.enter ? 
-        `
-        &:hover {
-            color: ${color.primary};
+    ${props => {
+        if (props.types === "Login") {
+            return `
+                &:hover {
+                    color: ${color.primary};
+                }
+                svg {
+                    margin-left: -9px;
+                }
+                &:hover svg path {
+                    stroke: ${color.primary};
+                }
+            `
+        } else if (props.types === "Logoff") {
+            return `
+                &:hover {
+                    color: ${color.accent2};
+                }
+                svg {
+                    margin-right: -6px;
+                }
+                &:hover svg path {
+                    stroke: ${color.accent2};
+                }
+            `
+        } else if (props.types === "book") {
+            return `
+                width: 100px;
+                &:hover {
+                    color: ${color.primary};
+                }
+                &:hover svg path {
+                    fill: ${color.primary};
+                }
+            `
         }
-        svg {
-            margin-left: -9px;
-        }
-        &:hover svg path {
-            stroke: ${color.primary};
-        }
-        ` : 
-        `
-        &:hover {
-            color: ${color.accent2};
-        }
-        svg {
-            margin-right: -6px;
-        }
-        &:hover svg path {
-            stroke: ${color.accent2};
-        }
-        `
-    }
-    
+    }}
 `
 export const IconText = styled.span`
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
+    word-wrap: normal;
     font-family: Calibri, Arial,sans-serif;
 `

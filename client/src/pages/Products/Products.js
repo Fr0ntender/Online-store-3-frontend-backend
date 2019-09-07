@@ -35,6 +35,7 @@ const Products = ({
                 <Col set="10">
                     <ProductTable
                         data={data}
+                        desc={true}
                         sortState={history.location}
                         searchActive={searchActive}
                         delProduct={delProduct}/>

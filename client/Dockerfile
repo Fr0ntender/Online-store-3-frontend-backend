@@ -1,13 +1,15 @@
 FROM frostox/custom-node:12.9.0
 
 RUN cd home/ \
-    && git clone https://github.com/Frost0x/Online-store_Phase2_client.git \
-    && cd Online-store_Phase2_client \
+    && git clone https://github.com/Frost0x/Online-Store_Phase3.git online-store\
+    && cd online-store \
+    && rm -rf server \
+    && cd client \
     && yarn clean \
     && yarn \
     && yarn build
 
-WORKDIR /home/Online-store_Phase2_client
+WORKDIR /home/online-store
 
 EXPOSE 5000
 

@@ -42,6 +42,7 @@ const Home = ({
                     <Col>
                         <Navbar
                             data={data}
+                            desc={false}
                             authorized={authorized}
                             showModal={showModal}/>
                     </Col>

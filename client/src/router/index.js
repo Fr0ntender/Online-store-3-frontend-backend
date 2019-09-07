@@ -8,10 +8,11 @@ import {
 
 import PrivateRoute from '../composables/PrivateRoute/'
 
-import Home from '../pages/Home/'
-import Products from '../pages/Products/'
-import AddProduct from '../pages/AddProduct/'
-import ChangeProduct from '../pages/ChangeProduct/'
+import Home from '../pages/Home'
+import Products from '../pages/Products'
+import AddProduct from '../pages/AddProduct'
+import Description from '../pages/Description'
+import ChangeProduct from '../pages/ChangeProduct'
 
 const RouteHandler = () => (
   <Router>
@@ -21,6 +22,7 @@ const RouteHandler = () => (
         <PrivateRoute path="/admin/addnewproduct" exact component={AddProduct}/>
         <PrivateRoute path="/admin/products/:id" exact component={ChangeProduct}/>
         <PrivateRoute path="/admin/products" exact component={Products}/>
+        <PrivateRoute path="/description" exact component={Description}/>
       </Switch>
     </div>
   </Router>

@@ -1,12 +1,14 @@
 FROM frostox/custom-node:12.9.0
 
 RUN cd home/ \
-    && git clone https://github.com/Frost0x/Online-store_Phase2_server.git \
-    && cd Online-store_Phase2_server \
+    && git clone https://github.com/Frost0x/Online-Store_Phase3.git online-store\
+    && cd online-store \
+    && rm -rf client \
+    && cd server \
     && npm i -g nodemon \
     && yarn
 
-WORKDIR /home/Online-store_Phase2_server
+WORKDIR /home/online-store
 
 EXPOSE 8081
 

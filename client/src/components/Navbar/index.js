@@ -6,7 +6,7 @@ import Search from '../../components/Search'
 import LoginSrc from '../../assets/login.svg'
 import ExitSrc from '../../assets/exit.svg'
 import Logo from '../../assets/logo.svg'
-// import BooksSrc from '../../assets/books.svg'
+import BooksSrc from '../../assets/books.svg'
 // import TrashSrc from '../../assets/trash.svg'
 
 import {
@@ -20,6 +20,7 @@ import {
 
 const Navbar = ({
     data,
+    desc,
     logout,
     showModal,
     authorized,
@@ -32,36 +33,38 @@ const Navbar = ({
                     <LogosDesc>React</LogosDesc>
                 </Logos>
             </Link>
-            <Search data={data}/>
-            {
-                authorized
+            { !desc && <Search data={data}/> }
+            { !desc && <Link to="/description">
+                <Icons types="book">
+                    <ReactSVG src={BooksSrc} />
+                    <IconText>О проекте</IconText>
+                </Icons>
+            </Link>}
+            {   
+                !desc && (authorized
                     ?
                     (
                         !logout
                             ?
                             <Link to="/admin/products">
-                                <Icons enter={true} >
+                                <Icons types="Login" >
                                     <ReactSVG src={LoginSrc}/>
                                     <IconText>Войти</IconText>
                                 </Icons>
                             </Link>
                             :
-                            <Icons onClick={logout}>
+                            <Icons onClick={logout} types="Logoff">
                                 <ReactSVG src={ExitSrc} />
                                 <IconText>Выйти</IconText>
                             </Icons>
                     )
                     :
-                    <Icons onClick={showModal} enter={true} >
+                    <Icons onClick={showModal} types="Login" >
                         <ReactSVG src={LoginSrc} />
                         <IconText>Войти</IconText>
-                    </Icons>
+                    </Icons>)
             }
             {/* <Icons>
-                <ReactSVG src={BooksSrc} />
-                <IconText>Книги</IconText>
-            </Icons>
-            <Icons>
                 <ReactSVG src={TrashSrc} />
                 <IconText>Корзина</IconText>
             </Icons> */}
