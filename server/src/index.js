@@ -26,9 +26,8 @@ app.use('/graphql', graphqlHTTP({
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// RESTful api handlers
 app.get('/', (req, res) => {
-    res.send(200)
+    res.sendStatus(200)
 })
 
 app.listen(devPort, function () {
