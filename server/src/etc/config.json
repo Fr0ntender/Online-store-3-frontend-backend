@@ -4,7 +4,7 @@
     "devPort": 4000,
     "db":{
         "name": "OnlineStore2",
-        "host": "localhost",
+        "host": "db",
         "port": 27017
     }
 }
