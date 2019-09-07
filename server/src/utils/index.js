@@ -1,9 +1,12 @@
 const mongoose = require('mongoose')
 
-const { db } = require('../etc/config.json')
+const { db, devHost } = require('../etc/config.json')
+
+const host = process.env.NODE_ENV === 'development' ? devHost
+: db.host
 
 exports.setUpConnection = () => {
-    mongoose.connect(`mongodb://${db.host}:${db.port}/${db.name}`)
+    mongoose.connect(`mongodb://${host}:${db.port}/${db.name}`)
     mongoose.set('useCreateIndex', true)
     mongoose.set('useNewUrlParser', true)
     mongoose.set('useFindAndModify', false)

@@ -12,4 +12,4 @@ WORKDIR /home/online-store/server
 
 EXPOSE 4000
 
-CMD ["yarn", "start"]
+CMD ["nodemon", "src/index.js"]
