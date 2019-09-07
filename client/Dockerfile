@@ -9,7 +9,7 @@ RUN cd home/ \
     && yarn \
     && yarn build
 
-WORKDIR /home/online-store
+WORKDIR /home/online-store/client
 
 EXPOSE 5000
 

@@ -8,7 +8,7 @@ RUN cd home/ \
     && npm i -g nodemon \
     && yarn
 
-WORKDIR /home/online-store
+WORKDIR /home/online-store/server
 
 EXPOSE 4000
 
