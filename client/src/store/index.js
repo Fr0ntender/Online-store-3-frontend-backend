@@ -2,7 +2,6 @@ import { createStore, compose, applyMiddleware, combineReducers } from "redux"
 import thunk from "redux-thunk"
 
 import modalsReducer from '../ducks/modals'
-import productCardReducer from '../ducks/productCard'
 import authorizationReducer from '../ducks/authorization'
 
 
@@ -15,8 +14,7 @@ const middleware = applyMiddleware(thunk);
 
 const rootReducer = combineReducers({
     modals: modalsReducer,
-    authorization: authorizationReducer,
-    productCard: productCardReducer
+    authorization: authorizationReducer
 
 })
 

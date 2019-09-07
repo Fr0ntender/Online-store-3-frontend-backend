@@ -26,6 +26,7 @@ export const CardRow = styled.div`
 `
 export const CardWrap = styled.div`
     width: 100%;
+    margin-top: -1px;
     margin-right: -1px;
     min-width: 215px;
     height: 540px;
