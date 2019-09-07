@@ -1,4 +1,4 @@
-FROM frostox/custom-node:12.10.0
+FROM frostox/custom-node:12.9.0
 
 RUN cd home/ \
     && git clone https://github.com/Frost0x/Online-Store_Phase3.git online-store\
