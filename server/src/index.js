@@ -19,7 +19,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 db.setUpConnection()
 
 // Using graphql middleware
-app.use('/graphql', graphqlHTTP({
+app.post('/graphql', graphqlHTTP({
+    schema: schema,
+    graphiql: true,
+}))
+app.get('/graphql', graphqlHTTP({
     schema: schema,
     graphiql: true,
 }))
