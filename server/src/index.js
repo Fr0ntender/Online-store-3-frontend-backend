@@ -3,14 +3,14 @@ const graphqlHTTP = require('express-graphql'),
     express = require('express'),
     cors = require('cors')
 
-const { db, devUrl, devPort } = require('./etc/config.json'),
+const { database, devUrl, devPort } = require('./etc/config.json'),
     schema = require('./graphql/Product'),
     db = require('./utils')
 
 // Initialization of express application
 const app = express()
 const host = process.env.NODE_ENV === 'development' ? devUrl
-: `http://${db.host}`
+: `http://${database.host}`
 // Allow requests from any origin
 app.use(cors({ origin: '*' }))
 // Using bodyParser middleware

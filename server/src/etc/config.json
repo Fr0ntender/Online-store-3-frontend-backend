@@ -2,7 +2,7 @@
     "devHost": "localhost",
     "devUrl": "http://localhost",
     "devPort": 4000,
-    "db":{
+    "database":{
         "name": "OnlineStore2",
         "host": "db",
         "port": 27017
