@@ -1,6 +1,7 @@
 {
-    "name": "book-collection-back",
+    "name": "online-store-3-srv",
     "version": "0.1.0",
+    "license": "custom",
     "private": true,
     "author": "Frost0x",
     "scripts": {

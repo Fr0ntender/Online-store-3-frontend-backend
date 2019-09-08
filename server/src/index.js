@@ -9,7 +9,8 @@ const { devUrl, devPort } = require('./etc/config.json'),
 
 // Initialization of express application
 const app = express()
-
+const host = process.env.NODE_ENV === 'development' ? devUrl
+: `http://${db.host}`
 // Allow requests from any origin
 app.use(cors({ origin: '*' }))
 // Using bodyParser middleware
@@ -28,7 +29,7 @@ app.get('/graphql', graphqlHTTP({
     graphiql: true,
 }))
 
-app.listen(devPort, function () {
-    console.log(`Server running on ${devUrl}:${devPort}`)
-    console.log(`GraphQL running on ${devUrl}:${devPort}/graphql`)
+app.listen(devPort, () => {
+    console.log(`Server running on ${host}:${devPort}`)
+    console.log(`GraphQL running on ${host}:${devPort}/graphql`)
 })
