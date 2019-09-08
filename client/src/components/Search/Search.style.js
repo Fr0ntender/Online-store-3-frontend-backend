@@ -1,5 +1,7 @@
 import searchPath from '../../assets/search.svg'
 import styled from 'styled-components'
+import ReactSVG from 'react-svg'
+
 import { 
     color
 } from '../../styles/var.style'
@@ -11,6 +13,7 @@ export const Wrap = styled.div`
     justify-content: space-between;
 `
 export const Search = styled.div`
+    position: relative;
     height: 40px;
     box-sizing: border-box;
     flex: 1;
@@ -73,5 +76,19 @@ export const SearchButtonWrapContent = styled.button`
         background-image: url(${searchPath});
         background-color: transparent;
         background-repeat: no-repeat;
+    }
+`
+export const CancellButton = styled(ReactSVG)`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    svg line {
+        stroke: ${color.bottom};
+    }
+    svg:hover {
+        cursor: pointer;
+            line {
+            stroke: ${color.default};
+        }
     }
 `
