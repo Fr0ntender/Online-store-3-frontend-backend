@@ -6,7 +6,7 @@ const host = process.env.NODE_ENV === 'development' ? devHost
 : database.host
 
 exports.setUpConnection = () => {
-    mongoose.connect(`mongodb://${host}:${database.port}/${db.name}`)
+    mongoose.connect(`mongodb://${host}:${database.port}/${database.name}`)
     mongoose.set('useCreateIndex', true)
     mongoose.set('useNewUrlParser', true)
     mongoose.set('useFindAndModify', false)
