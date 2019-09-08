@@ -19,10 +19,10 @@ const RouteHandler = () => (
     <div>
       <Switch>
         <Route path="/" exact component={Home} />
+        <Route path="/description" exact component={Description}/>
         <PrivateRoute path="/admin/addnewproduct" exact component={AddProduct}/>
         <PrivateRoute path="/admin/products/:id" exact component={ChangeProduct}/>
         <PrivateRoute path="/admin/products" exact component={Products}/>
-        <PrivateRoute path="/description" exact component={Description}/>
       </Switch>
     </div>
   </Router>
