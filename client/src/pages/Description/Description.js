@@ -8,7 +8,6 @@ import {
 
 import {
     HeaderH1,
-    HeaderH3,
     Desc1,
     Desc2,
 } from '../../styles/typography.style'
