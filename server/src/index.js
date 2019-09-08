@@ -3,7 +3,7 @@ const graphqlHTTP = require('express-graphql'),
     express = require('express'),
     cors = require('cors')
 
-const { devUrl, devPort } = require('./etc/config.json'),
+const { db, devUrl, devPort } = require('./etc/config.json'),
     schema = require('./graphql/Product'),
     db = require('./utils')
 
