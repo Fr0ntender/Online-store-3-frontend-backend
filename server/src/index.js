@@ -12,7 +12,9 @@ const app = express()
 
 // Allow requests from any origin
 app.use(cors({ origin: '*' }))
-
+// Using bodyParser middleware
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 // Set up connection of database
 db.setUpConnection()
 
@@ -21,14 +23,6 @@ app.use('/graphql', graphqlHTTP({
     schema: schema,
     graphiql: true,
 }))
-
-// Using bodyParser middleware
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
-
-app.get('/', (req, res) => {
-    res.sendStatus(200)
-})
 
 app.listen(devPort, function () {
     console.log(`Server running on ${devUrl}:${devPort}`)
