@@ -1,6 +1,6 @@
-# The online store - Phase 3  
-This is version 3 of the demo application, which is a small part of the functionality of the online store with a simplified admin control panel. To login to the admin panel, use "test" as your login and password.  
-It differs from version 2 in that GraphQL is used as a database query language.
+# The online store - 2  
+This is version 2 of the demo application, which is a small part of the functionality of the online store with a simplified admin control panel. To login to the admin panel, use "test" as your login and password.  
+It differs from version 1 in that GraphQL is used as a database query language.
 
 Сlient: React / React-Apollo / Redux / Styled Components;  
 Server: Node / GraphQL / Express / Mongoose;  
