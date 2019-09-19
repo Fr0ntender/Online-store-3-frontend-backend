@@ -44,7 +44,7 @@ const Description = () => {
                         База данных: MongoDB.
                     </Desc1>
                     <Desc1>
-                        Приложение развёрнуто на: AWS ES2 - Ubunu.18.04 при помощи Docker и Nginx.
+                        Приложение развёрнуто на: AWS ES2 - Ubuntu 18.04 при помощи Docker и Nginx.
                     </Desc1>
                 </Col>
             </Row>
