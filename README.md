@@ -1,4 +1,4 @@
-# The online store - 2  
+# The online store two 
 This is version 2 of the demo application, which is a small part of the functionality of the online store with a simplified admin control panel. To login to the admin panel, use "test" as your login and password.  
 It differs from version 1 in that GraphQL is used as a database query language.
 
