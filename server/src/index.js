@@ -1,16 +1,14 @@
 const graphqlHTTP = require('express-graphql'),
     bodyParser = require('body-parser'),
     express = require('express'),
-    cors = require('cors')
+    cors = require('cors');
 
-const { database, devUrl, devPort } = require('./etc/config.json'),
-    schema = require('./graphql/Product'),
-    db = require('./utils')
+const schema = require('./graphql/Product'),
+    db = require('./utils');
 
+const { PORT } = process.env;
 // Initialization of express application
 const app = express()
-const host = process.env.NODE_ENV === 'development' ? devUrl
-: `http://${database.host}`
 // Allow requests from any origin
 app.use(cors({ origin: '*' }))
 // Using bodyParser middleware
@@ -29,7 +27,7 @@ app.get('/graphql', graphqlHTTP({
     graphiql: true,
 }))
 
-app.listen(devPort, () => {
-    console.log(`Server running on ${host}:${devPort}`)
-    console.log(`GraphQL running on ${host}:${devPort}/graphql`)
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`)
+    console.log(`GraphQL running on http://localhost:${PORT}/graphql`)
 })

@@ -1,15 +1,16 @@
 {
     "name": "online-store-3-srv",
     "version": "0.1.0",
-    "license": "custom",
+    "license": "MIT",
     "private": true,
     "author": "Frost0x",
     "scripts": {
-        "start": "nodemon src/index.js"
+        "start": "nodemon -r dotenv/config src/index.js dotenv_config_path=.env"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
         "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "express-graphql": "^0.9.0",
         "graphql": "^14.5.4",

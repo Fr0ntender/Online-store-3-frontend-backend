@@ -6,8 +6,6 @@ import Search from '../../components/Search'
 import LoginSrc from '../../assets/login.svg'
 import ExitSrc from '../../assets/exit.svg'
 import Logo from '../../assets/logo.svg'
-import BooksSrc from '../../assets/books.svg'
-// import TrashSrc from '../../assets/trash.svg'
 
 import {
     Nav,
@@ -34,12 +32,6 @@ const Navbar = ({
                 </Logos>
             </Link>
             { !desc && <Search data={data}/> }
-            { !desc && <Link to="/description">
-                <Icons types="book">
-                    <ReactSVG src={BooksSrc} />
-                    <IconText>О проекте</IconText>
-                </Icons>
-            </Link>}
             {   
                 !desc && (authorized
                     ?
@@ -64,10 +56,6 @@ const Navbar = ({
                         <IconText>Войти</IconText>
                     </Icons>)
             }
-            {/* <Icons>
-                <ReactSVG src={TrashSrc} />
-                <IconText>Корзина</IconText>
-            </Icons> */}
         </Nav>
     )
 }
