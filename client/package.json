@@ -1,6 +1,7 @@
 {
-  "name": "online-store-3",
+  "name": "online-store-3-frontend",
   "version": "0.1.0",
+  "author": "Fr0ntender",
   "license": "MIT",
   "private": true,
   "dependencies": {
