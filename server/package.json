@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "license": "MIT",
     "private": true,
-    "author": "Fr0ntender",
+    "author": "Eduard Kirilov <kev987.free@ya.ru>",
     "scripts": {
         "start": "nodemon -r dotenv/config src/index.js dotenv_config_path=.env"
     },
