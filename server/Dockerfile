@@ -2,7 +2,7 @@ FROM node:12.10.0-alpine
 
 RUN apk add git \
     && cd home/ \
-    && git clone https://github.com/Frost0x/Online-Store_Phase3.git online-store \
+    && git clone https://github.com/eduard-kirilov/Online-store-3-frontend-backend.git \
     && cd online-store \
     && rm -rf client \
     && cd server \
